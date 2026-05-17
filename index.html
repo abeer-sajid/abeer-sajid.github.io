@@ -1,245 +1,17 @@
-
-Claude finished the response
-2023 international peace conference, 
-
-I volunteer there, and wanna upload in description 
-
-Please write something for me on linkedin volunteer section
-
-2:09 AM
-
-Synthesized volunteer experience into polished LinkedIn description
-Synthesized volunteer experience into polished LinkedIn description
-Here's a LinkedIn volunteer description for you:
-
-Volunteer | 2023 International Peace Conference 2023
-
-Contributed as a volunteer at the 2023 International Peace Conference, supporting the coordination and smooth execution of a global forum dedicated to dialogue, diplomacy, and conflict resolution. Assisted in facilitating sessions, engaging with delegates and attendees from diverse cultural and national backgrounds, and ensuring a welcoming and organized environment throughout the event. Gained valuable experience in international relations, cross-cultural communication, and large-scale event coordination while working alongside passionate individuals united by a shared commitment to peace.
-
-If you share a few more details, I can make it even more personalized:
-
-What was your specific role? (registration, logistics, interpretation, hospitality, etc.)
-Where was the conference held?
-Any notable tasks or achievements?
-No write in human easy english plain 
-
-Not too long
-
-2:10 AM
-
-Determined user needed plain, concise English explanation
-Determined user needed plain, concise English explanation
-Here you go:
-
-Volunteer | 2023 International Peace Conference
-
-Volunteered at an international peace conference in 2023. Helped with organizing and supporting the event, worked with people from different countries, and learned a lot about teamwork and global communication. It was a great experience to contribute to something meaningful.
-
-Short, simple, and genuine! Let me know if you want any small changes.
-
-Write short simple english to my professor 
-
-For ask for recommendations on linkein
-
-2:18 AM
-Hi Professor [Name],
-
-I hope you are doing well. I am reaching out to ask if you would be comfortable writing me a LinkedIn recommendation. It would mean a lot to me coming from you.
-
-Please let me know if you need any information from me.
-
-Thank you so much for your time.
-
-Best regards,
-[Your Name]
-Just fill in your professor's name and your name. Let me know if you want any changes!
-
-Did you use the correct placeholders in the message string?
-
-3:08 AM
-
-Thinking about placeholder accuracy in a message string
-Thinking about placeholder accuracy in a message string
-Claude's response was interrupted.
-# Add placeholders to the message string
-message = """
-Answer the following question using the context provided:
-
-Context:
-"design a chat prompt template to combine the retrieved document chunks with the user input question"
-
-Question:
-"The general structure of the prompt has already been provided; your goal is to insert the correct input variable placeholders into the message string and convert the string into a chat prompt template."
-
-Answer:
-"""
-
-# Create a chat prompt template from the message string
-prompt_template = ChatPromptTemplate.from_messages([("human", message)])
-Show more
-3:08 AM
-
-Identified missing placeholder variables in template message
-Identified missing placeholder variables in template message
-No, the placeholders are missing. The context and question are hardcoded as plain text instead of variables. Here's the corrected version:
-
-python
-# Add placeholders to the message string
-message = """
-Answer the following question using the context provided:
-
-Context:
-{context}
-
-Question:
-{question}
-
-Answer:
-"""
-
-# Create a chat prompt template from the message string
-prompt_template = ChatPromptTemplate.from_messages([("human", message)])
-What changed:
-
-"design a chat prompt template..." → {context}
-"The general structure..." → {question}
-Now when you invoke the template, you pass in the actual values:
-
-python
-prompt_template.invoke({"context": "...", "question": "..."})
-write one paragraph description in simple plain english 
-
-A production-quality Retrieval-Augmented Generation (RAG) chatbot. Users upload documents (PDF, TXT, DOCX, CSV), ask questions, and get grounded answers with exact source citations.
-
-How it works: documents are split into ~500-token chunks using a token-aware splitter, each chunk is embedded into a 384-dimensional vector using HuggingFace's all-MiniLM-L6-v2, and stored in a persistent ChromaDB collection. When a user asks a question, the question is embedded with the same model, ChromaDB returns the top-K most semantically similar chunks, and the chunks plus the question plus conversation history are sent to Groq's LLaMA 3.3 70B with a strict system prompt that requires the answer to come only from the provided context with inline citations.
-
-Key engineering decisions:
-
-Token-aware chunking using tiktoken for accurate chunk boundaries (most tutorials get this wrong by measuring in characters)
-Deterministic chunk IDs so re-uploads are idempotent — replacing existing chunks instead of duplicating them
-Structured citation extraction with similarity score, document filename, section index, and page number for PDFs
-Three-bucket confidence scoring (high/medium/low) derived from retrieval similarity scores
-Conversation memory persisted in SQLite, with the last 5 exchanges included in each new prompt for follow-up questions
-Layered architecture so each component (LLM provider, vector store, embedding model, frontend) is independently swappable
-Tech stack: Python 3.11, FastAPI, LangChain, ChromaDB, HuggingFace sentence-transformers, Groq (LLaMA 3.3 70B), Pydantic v2, SQLAlchemy 2.0, Streamlit, Plotly. Code is open source.
-
-Show more
-3:39 AM
-
-Synthesized technical specifications into accessible narrative form
-Synthesized technical specifications into accessible narrative form
-A production-ready AI chatbot that lets users upload documents (PDF, TXT, DOCX, CSV) and ask questions about them, receiving accurate answers with exact source citations. It works by splitting documents into chunks, converting them into vectors for semantic search, and retrieving the most relevant pieces when a question is asked — then passing everything to LLaMA 3.3 70B to generate a grounded answer. Key features include smart chunking, duplicate-proof re-uploads, confidence scoring, and conversation memory that remembers the last 5 messages for natural follow-up questions. Built with Python, FastAPI, LangChain, ChromaDB, and Streamlit, with a clean layered architecture that makes each component easy to swap out. Fully open source.
-
-when i am trying to upload this link in feature on linkedin, https://abeer-sajid.github.io/ 
-
-its not saving thumbnail and link together what should i do
-
-3:48 AM
-
-Identified common LinkedIn thumbnail-link issue, prepared practical solutions
-Identified common LinkedIn thumbnail-link issue, prepared practical solutions
-This is a very common LinkedIn bug. Here are a few things to try:
-
-1. Wait and retry LinkedIn sometimes takes time to fetch the thumbnail. Wait a few minutes and try again.
-
-2. Add an Open Graph meta tag to your site LinkedIn pulls the thumbnail from your website's meta tags. Make sure your site has these in the <head>:
-
-html
-<meta property="og:title" content="Your Project Name" />
-<meta property="og:description" content="Short description" />
-<meta property="og:image" content="https://abeer-sajid.github.io/your-image.png" />
-<meta property="og:url" content="https://abeer-sajid.github.io/" />
-3. Use LinkedIn Post Inspector Go to 👉 LinkedIn Post Inspector
-
-Paste your link and click Inspect
-It forces LinkedIn to re-scrape your site and refresh the thumbnail cache
-4. Use a direct image link If no thumbnail shows, LinkedIn lets you manually upload a cover image for the featured section instead of relying on the link preview.
-
-The Post Inspector usually fixes it instantly — try that first. Let me know if it still doesn't work!
-
-Warning    The title should be between 15 and 250 characters long.
-Warning    The description should be at least 100 characters long.
-Warning    Add an og:image tag to the page to have control over the content's image on LinkedIn.
-
-3:50 AM
-
-Identified meta tag deficiencies requiring immediate correction
-Identified meta tag deficiencies requiring immediate correction
-These are the 3 fixes you need to add in your website's <head> tag:
-
-html
-<!-- Title (must be 15–250 characters) -->
-<meta property="og:title" content="Abeer Sajid | AI & Software Developer Portfolio" />
-
-<!-- Description (must be 100+ characters) -->
-<meta property="og:description" content="Explore my projects in AI, machine learning, and software development. Check out my work, skills, and experience as a developer." />
-
-<!-- Image (your thumbnail on LinkedIn) -->
-<meta property="og:image" content="https://abeer-sajid.github.io/your-image.png" />
-What to do:
-
-Replace your-image.png with an actual image from your site
-Add these lines inside <head> in your index.html
-Push the changes to GitHub
-Go back to LinkedIn Post Inspector and click Inspect again to refresh
-That should clear all 3 warnings! Let me know if you need help finding where to add it in your code.
-
-
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Abeer Sajid — AI Engineer</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link href="https://fonts.googleapis.com/css2?family=Fr
-
-pasted
-
-give me the updates version
-
-3:51 AM
-
-Orchestrated meta tag integration into HTML structure
-Orchestrated meta tag integration into HTML structure
-Here's the updated <head> section with the Open Graph tags added:
-
-
-Ran 2 commands, edited a file
-Ran 2 commands, edited a file
-The file was shared as text in the chat, not as an upload. I'll build the updated file directly. The only change is adding the OG tags:
-
-
-Ran a command, created a file, read a file
-Ran a command, created a file, read a file
-Here's your updated file. The only change is the 5 new OG tags added right after the <title> tag:
-
-html
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://abeer-sajid.github.io/" />
-<meta property="og:title" content="Abeer Sajid — AI Engineer | Production AI & LLM Systems" />
-<meta property="og:description" content="Production Support Engineer at Bank of America building LLM agents, RAG pipelines, and AI workflow automation. M.S. Computer Science, UAB. Based in Charlotte, NC." />
-<meta property="og:image" content="https://abeer-sajid.github.io/og-image.png" />
-One thing to do: Replace og-image.png with an actual image file on your site — a screenshot of your portfolio or a simple banner works great. Then push to GitHub and re-run the LinkedIn Post Inspector.
-
-
-Index
-Code · HTML 
-
-
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-Index · HTML
-Copy
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abeer Sajid — AI Engineer</title>
- 
+
   <!-- Open Graph / LinkedIn -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://abeer-sajid.github.io/" />
   <meta property="og:title" content="Abeer Sajid — AI Engineer | Production AI & LLM Systems" />
   <meta property="og:description" content="Production Support Engineer at Bank of America building LLM agents, RAG pipelines, and AI workflow automation. M.S. Computer Science, UAB. Based in Charlotte, NC." />
   <meta property="og:image" content="https://abeer-sajid.github.io/og-image.png" />
- 
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -259,7 +31,7 @@ Copy
       --max: 1080px;
       --nav-h: 68px;
     }
- 
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 24px); }
     body {
@@ -273,7 +45,7 @@ Copy
     ::selection { background: #c7d2fe; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
- 
+
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
@@ -325,10 +97,10 @@ Copy
     }
     .mob.open { display: flex; }
     .mob a { display: block; padding: 13px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); text-decoration: none; font-size: 0.95rem; }
- 
+
     /* LAYOUT */
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 clamp(20px,5vw,72px); }
- 
+
     /* HERO */
     #hero { padding-top: calc(var(--nav-h) + 80px); padding-bottom: 100px; }
     #hero .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
@@ -366,7 +138,7 @@ Copy
     }
     .ha { font-size: 0.8rem; color: var(--ink-3); text-align: right; line-height: 1.5; }
     .ha strong { color: var(--ink-2); font-weight: 500; display: block; }
- 
+
     /* SECTIONS */
     .sec { padding: 80px 0; border-top: 1px solid var(--line); }
     .sec-inner { display: grid; grid-template-columns: 190px 1fr; gap: clamp(28px,5vw,72px); align-items: start; }
@@ -376,11 +148,11 @@ Copy
       position: sticky; top: calc(var(--nav-h) + 20px);
     }
     .sec-body { min-width: 0; }
- 
+
     /* REVEAL */
     .rv { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .rv.in { opacity: 1; transform: none; }
- 
+
     /* ABOUT */
     .about-txt { font-size: 1.05rem; color: var(--ink-2); font-weight: 400; line-height: 1.8; max-width: 620px; }
     .about-txt p + p { margin-top: 16px; }
@@ -403,7 +175,7 @@ Copy
       color: var(--ink); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px;
     }
     .stat-l { font-size: 0.78rem; color: var(--ink-3); font-weight: 400; }
- 
+
     /* PROJECTS */
     .proj-list { display: flex; flex-direction: column; }
     .proj-row {
@@ -432,7 +204,7 @@ Copy
       text-decoration: none; white-space: nowrap; padding-top: 4px; transition: color 0.2s;
     }
     .gh-link:hover { color: var(--ink); }
- 
+
     /* SKILLS */
     .sk-table { display: flex; flex-direction: column; }
     .sk-row {
@@ -448,7 +220,7 @@ Copy
       padding: 4px 11px; border-radius: 3px; transition: all 0.15s;
     }
     .sk:hover { border-color: var(--ink-3); color: var(--ink); background: var(--white); }
- 
+
     /* EXPERIENCE */
     .exp-list { display: flex; flex-direction: column; }
     .exp-row {
@@ -466,7 +238,7 @@ Copy
       color: #16a34a; background: rgba(22,163,74,0.1);
       padding: 2px 8px; border-radius: 3px; margin-top: 5px;
     }
- 
+
     /* EDUCATION */
     .edu-list { display: flex; flex-direction: column; }
     .edu-row {
@@ -477,7 +249,7 @@ Copy
     .edu-deg { font-family: var(--font-d); font-weight: 400; font-size: 1.05rem; color: var(--ink); margin-bottom: 4px; }
     .edu-sch { font-size: 0.88rem; color: var(--ink-3); font-weight: 400; }
     .edu-gpa { font-size: 0.85rem; font-weight: 600; color: var(--ink-2); text-align: right; padding-top: 3px; }
- 
+
     /* CERTS */
     .certs-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(210px,1fr));
@@ -488,7 +260,7 @@ Copy
     .cert:hover { background: var(--off); }
     .cert-n { font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 2px; }
     .cert-s { font-size: 0.76rem; color: var(--ink-3); }
- 
+
     /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
     .contact-intro { font-size: 1rem; color: var(--ink-2); font-weight: 400; line-height: 1.75; margin-bottom: 24px; }
@@ -513,13 +285,13 @@ Copy
     .fg input:focus, .fg textarea:focus { border-color: var(--ink-3); }
     .fg textarea { min-height: 110px; }
     .form-ok { display: none; font-size: 0.875rem; color: #16a34a; padding: 8px 0; font-weight: 500; }
- 
+
     /* FOOTER */
     footer { border-top: 1px solid var(--line); padding: 32px 0; }
     footer .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
     .ft-name { font-family: var(--font-d); font-weight: 300; font-size: 0.95rem; color: var(--ink-3); }
     .ft-r { font-size: 0.78rem; color: var(--ink-4); }
- 
+
     /* ADMIN */
     #adm-panel {
       display: none; position: fixed; top: 0; right: 0;
@@ -573,7 +345,7 @@ Copy
     .adm-mt { font-size: 0.82rem; color: var(--ink-4); }
     .flash { position: fixed; bottom: 24px; right: 24px; background: var(--ink); color: var(--white); font-size: 0.82rem; padding: 10px 18px; border-radius: 4px; z-index: 500; animation: fo 2.5s forwards; pointer-events: none; }
     @keyframes fo { 0%,65%{opacity:1} 100%{opacity:0} }
- 
+
     /* RESPONSIVE */
     @media (max-width:900px) { .sec-inner { grid-template-columns: 1fr; gap: 20px; } .sec-lbl { position: static; } }
     @media (max-width:700px) {
@@ -591,7 +363,7 @@ Copy
   </style>
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Abeer Sajid</a>
@@ -614,7 +386,7 @@ Copy
   <a href="#certifications" onclick="toggleMob()">Certifications</a>
   <a href="#contact" onclick="toggleMob()">Contact</a>
 </div>
- 
+
 <!-- HERO -->
 <div id="hero">
   <div class="wrap">
@@ -634,7 +406,7 @@ Copy
     </div>
   </div>
 </div>
- 
+
 <!-- ABOUT -->
 <div class="sec" id="about"><div class="wrap"><div class="sec-inner">
   <div class="sec-lbl">About</div>
@@ -656,7 +428,7 @@ Copy
     </div>
   </div>
 </div></div></div>
- 
+
 <!-- PROJECTS -->
 <div class="sec" id="projects"><div class="wrap"><div class="sec-inner">
   <div class="sec-lbl">Projects</div>
@@ -689,7 +461,7 @@ Copy
     </div>
   </div>
 </div></div></div>
- 
+
 <!-- SKILLS -->
 <div class="sec" id="skills"><div class="wrap"><div class="sec-inner">
   <div class="sec-lbl">Skills</div>
@@ -705,7 +477,7 @@ Copy
     </div>
   </div>
 </div></div></div>
- 
+
 <!-- EXPERIENCE -->
 <div class="sec" id="experience"><div class="wrap"><div class="sec-inner">
   <div class="sec-lbl">Experience</div>
@@ -754,7 +526,7 @@ Copy
     </div>
   </div>
 </div></div></div>
- 
+
 <!-- EDUCATION -->
 <div class="sec" id="education"><div class="wrap"><div class="sec-inner">
   <div class="sec-lbl">Education</div>
@@ -771,7 +543,7 @@ Copy
     </div>
   </div>
 </div></div></div>
- 
+
 <!-- CERTIFICATIONS -->
 <div class="sec" id="certifications"><div class="wrap"><div class="sec-inner">
   <div class="sec-lbl">Certifications</div>
@@ -787,7 +559,7 @@ Copy
     </div>
   </div>
 </div></div></div>
- 
+
 <!-- CONTACT -->
 <div class="sec" id="contact"><div class="wrap"><div class="sec-inner">
   <div class="sec-lbl">Contact</div>
@@ -814,13 +586,13 @@ Copy
     </div>
   </div>
 </div></div></div>
- 
+
 <!-- FOOTER -->
 <footer><div class="wrap">
   <div class="ft-name">Abeer Sajid — AI Engineer · Charlotte, NC</div>
   <div class="ft-r">© 2025</div>
 </div></footer>
- 
+
 <!-- ADMIN PANEL -->
 <div id="adm-panel">
   <div class="adm-hd">
@@ -867,7 +639,7 @@ Copy
     </div>
   </div>
 </div>
- 
+
 <script>
   const obs = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
@@ -876,9 +648,9 @@ Copy
     el.style.transitionDelay = (i % 5 * 55) + 'ms';
     obs.observe(el);
   });
- 
+
   function toggleMob() { document.getElementById('mob').classList.toggle('open'); }
- 
+
   function sendForm() {
     const n = document.getElementById('cf-n').value.trim();
     const e = document.getElementById('cf-e').value.trim();
@@ -888,11 +660,11 @@ Copy
     ['cf-n','cf-e','cf-m'].forEach(id => document.getElementById(id).value = '');
     setTimeout(() => document.getElementById('form-ok').style.display = 'none', 4000);
   }
- 
+
   const K = 'abeer_portfolio_v3';
   const gd = () => JSON.parse(localStorage.getItem(K) || '{}');
   const sd = d => localStorage.setItem(K, JSON.stringify(d));
- 
+
   function load() {
     const d = gd();
     if (d.bio) document.getElementById('about-text').innerHTML = d.bio;
@@ -908,11 +680,11 @@ Copy
       if (t) t.checked = false;
     });
   }
- 
+
   function sBio() { const v = document.getElementById('a-bio').value; document.getElementById('about-text').innerHTML = v; const d = gd(); d.bio = v; sd(d); flash('Bio saved'); }
   function sTag() { const v = document.getElementById('a-tag').value; document.getElementById('hero-tagline').textContent = v; const d = gd(); d.tag = v; sd(d); flash('Tagline saved'); }
   function sRole() { const v = document.getElementById('a-role').value; document.getElementById('exp-role').textContent = v; const d = gd(); d.role = v; sd(d); flash('Title saved'); }
- 
+
   function addP() {
     const t = document.getElementById('np-t').value.trim();
     if (!t) { alert('Title required.'); return; }
@@ -922,7 +694,7 @@ Copy
     ['np-t','np-d','np-s','np-l'].forEach(id => document.getElementById(id).value = '');
     flash('Project added');
   }
- 
+
   function renderRow(p) {
     const tags = (p.stack || '').split(',').map(t => `<span class="tg">${t.trim()}</span>`).join('');
     const row = document.createElement('div');
@@ -930,7 +702,7 @@ Copy
     row.innerHTML = `<div><div class="proj-top"><div class="proj-name">${p.title}</div><span class="ai-tag">AI</span></div><div class="proj-desc">${p.desc || ''}</div><div class="tags">${tags}</div></div>${p.link ? `<a href="${p.link}" target="_blank" class="gh-link">GitHub ↗</a>` : ''}`;
     document.getElementById('proj-list').appendChild(row);
   }
- 
+
   function renderAI(p) {
     const list = document.getElementById('a-pl');
     list.querySelector('.adm-mt')?.remove();
@@ -939,7 +711,7 @@ Copy
     item.innerHTML = `<span>${p.title}</span><span class="adm-del" onclick="delP(${p.id})">✕</span>`;
     list.appendChild(item);
   }
- 
+
   function delP(id) {
     document.querySelector(`.proj-row[data-id="${id}"]`)?.remove();
     document.querySelector(`.adm-pi[data-id="${id}"]`)?.remove();
@@ -947,7 +719,7 @@ Copy
     if (!document.querySelector('.adm-pi')) document.getElementById('a-pl').innerHTML = '<div class="adm-mt">None yet.</div>';
     flash('Removed');
   }
- 
+
   function togSec(id, cb) {
     document.getElementById(id).style.display = cb.checked ? '' : 'none';
     const d = gd(); d.hidden = d.hidden || [];
@@ -955,7 +727,7 @@ Copy
     else { d.hidden = d.hidden.filter(s => s !== id); }
     sd(d);
   }
- 
+
   function resetAll() { if (confirm('Reset all changes and reload?')) { localStorage.removeItem(K); location.reload(); } }
   function togAdm() { document.getElementById('adm-panel').classList.toggle('open'); }
   function flash(msg) {
@@ -963,11 +735,10 @@ Copy
     const el = document.createElement('div'); el.className = 'flash'; el.textContent = '✓ ' + msg;
     document.body.appendChild(el); setTimeout(() => el.remove(), 2500);
   }
- 
+
   document.addEventListener('keydown', e => { if (e.ctrlKey && e.shiftKey && e.key === 'A') togAdm(); });
- 
+
   load();
 </script>
 </body>
 </html>
- 

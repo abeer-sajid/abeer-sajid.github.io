@@ -4,14 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abeer Sajid — AI Engineer</title>
-
-  <!-- Open Graph / LinkedIn -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://abeer-sajid.github.io/" />
-  <meta property="og:title" content="Abeer Sajid — AI Engineer | Production AI & LLM Systems" />
-  <meta property="og:description" content="Production Support Engineer at Bank of America building LLM agents, RAG pipelines, and AI workflow automation. M.S. Computer Science, UAB. Based in Charlotte, NC." />
-  <meta property="og:image" content="https://abeer-sajid.github.io/og-image.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -46,7 +38,7 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       height: var(--nav-h);
@@ -98,10 +90,10 @@
     .mob.open { display: flex; }
     .mob a { display: block; padding: 13px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); text-decoration: none; font-size: 0.95rem; }
 
-    /* LAYOUT */
+    /* ── LAYOUT ── */
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 clamp(20px,5vw,72px); }
 
-    /* HERO */
+    /* ── HERO ── */
     #hero { padding-top: calc(var(--nav-h) + 80px); padding-bottom: 100px; }
     #hero .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
     .hero-eye {
@@ -139,7 +131,7 @@
     .ha { font-size: 0.8rem; color: var(--ink-3); text-align: right; line-height: 1.5; }
     .ha strong { color: var(--ink-2); font-weight: 500; display: block; }
 
-    /* SECTIONS */
+    /* ── SECTIONS ── */
     .sec { padding: 80px 0; border-top: 1px solid var(--line); }
     .sec-inner { display: grid; grid-template-columns: 190px 1fr; gap: clamp(28px,5vw,72px); align-items: start; }
     .sec-lbl {
@@ -149,11 +141,11 @@
     }
     .sec-body { min-width: 0; }
 
-    /* REVEAL */
+    /* ── REVEAL ── */
     .rv { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .rv.in { opacity: 1; transform: none; }
 
-    /* ABOUT */
+    /* ── ABOUT ── */
     .about-txt { font-size: 1.05rem; color: var(--ink-2); font-weight: 400; line-height: 1.8; max-width: 620px; }
     .about-txt p + p { margin-top: 16px; }
     .about-txt strong { color: var(--ink); font-weight: 600; }
@@ -176,7 +168,7 @@
     }
     .stat-l { font-size: 0.78rem; color: var(--ink-3); font-weight: 400; }
 
-    /* PROJECTS */
+    /* ── PROJECTS ── */
     .proj-list { display: flex; flex-direction: column; }
     .proj-row {
       display: grid; grid-template-columns: 1fr auto; gap: 20px;
@@ -205,7 +197,7 @@
     }
     .gh-link:hover { color: var(--ink); }
 
-    /* SKILLS */
+    /* ── SKILLS ── */
     .sk-table { display: flex; flex-direction: column; }
     .sk-row {
       display: grid; grid-template-columns: 145px 1fr; gap: 20px;
@@ -221,7 +213,7 @@
     }
     .sk:hover { border-color: var(--ink-3); color: var(--ink); background: var(--white); }
 
-    /* EXPERIENCE */
+    /* ── EXPERIENCE ── */
     .exp-list { display: flex; flex-direction: column; }
     .exp-row {
       display: grid; grid-template-columns: 1fr 165px; gap: 20px;
@@ -239,7 +231,7 @@
       padding: 2px 8px; border-radius: 3px; margin-top: 5px;
     }
 
-    /* EDUCATION */
+    /* ── EDUCATION ── */
     .edu-list { display: flex; flex-direction: column; }
     .edu-row {
       display: grid; grid-template-columns: 1fr auto; gap: 20px;
@@ -250,7 +242,7 @@
     .edu-sch { font-size: 0.88rem; color: var(--ink-3); font-weight: 400; }
     .edu-gpa { font-size: 0.85rem; font-weight: 600; color: var(--ink-2); text-align: right; padding-top: 3px; }
 
-    /* CERTS */
+    /* ── CERTS ── */
     .certs-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(210px,1fr));
       gap: 1px; background: var(--line); border: 1px solid var(--line);
@@ -261,7 +253,7 @@
     .cert-n { font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 2px; }
     .cert-s { font-size: 0.76rem; color: var(--ink-3); }
 
-    /* CONTACT */
+    /* ── CONTACT ── */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
     .contact-intro { font-size: 1rem; color: var(--ink-2); font-weight: 400; line-height: 1.75; margin-bottom: 24px; }
     .contact-links { display: flex; flex-direction: column; gap: 8px; }
@@ -286,13 +278,13 @@
     .fg textarea { min-height: 110px; }
     .form-ok { display: none; font-size: 0.875rem; color: #16a34a; padding: 8px 0; font-weight: 500; }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer { border-top: 1px solid var(--line); padding: 32px 0; }
     footer .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
     .ft-name { font-family: var(--font-d); font-weight: 300; font-size: 0.95rem; color: var(--ink-3); }
     .ft-r { font-size: 0.78rem; color: var(--ink-4); }
 
-    /* ADMIN */
+    /* ── ADMIN (fully hidden from UI) ── */
     #adm-panel {
       display: none; position: fixed; top: 0; right: 0;
       width: min(420px,100vw); height: 100vh;
@@ -346,7 +338,7 @@
     .flash { position: fixed; bottom: 24px; right: 24px; background: var(--ink); color: var(--white); font-size: 0.82rem; padding: 10px 18px; border-radius: 4px; z-index: 500; animation: fo 2.5s forwards; pointer-events: none; }
     @keyframes fo { 0%,65%{opacity:1} 100%{opacity:0} }
 
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ── */
     @media (max-width:900px) { .sec-inner { grid-template-columns: 1fr; gap: 20px; } .sec-lbl { position: static; } }
     @media (max-width:700px) {
       .nav-links { display: none; } .hamburger { display: flex; }
@@ -434,6 +426,7 @@
   <div class="sec-lbl">Projects</div>
   <div class="sec-body">
     <div class="proj-list" id="proj-list">
+
       <div class="proj-row rv">
         <div>
           <div class="proj-top"><div class="proj-name">AI Incident Triage Agent</div><span class="ai-tag">AI</span></div>
@@ -442,6 +435,7 @@
         </div>
         <a href="https://github.com/abeer-sajid" target="_blank" class="gh-link">GitHub ↗</a>
       </div>
+
       <div class="proj-row rv">
         <div>
           <div class="proj-top"><div class="proj-name">RAG Knowledge Chatbot</div><span class="ai-tag">AI</span></div>
@@ -450,6 +444,7 @@
         </div>
         <a href="https://github.com/abeer-sajid" target="_blank" class="gh-link">GitHub ↗</a>
       </div>
+
       <div class="proj-row rv">
         <div>
           <div class="proj-top"><div class="proj-name">AI Workflow Automation Bot</div><span class="ai-tag">AI</span></div>
@@ -458,6 +453,7 @@
         </div>
         <a href="https://github.com/abeer-sajid" target="_blank" class="gh-link">GitHub ↗</a>
       </div>
+
     </div>
   </div>
 </div></div></div>
@@ -587,13 +583,13 @@
   </div>
 </div></div></div>
 
-<!-- FOOTER -->
+<!-- FOOTER — clean, no admin hints -->
 <footer><div class="wrap">
   <div class="ft-name">Abeer Sajid — AI Engineer · Charlotte, NC</div>
   <div class="ft-r">© 2025</div>
 </div></footer>
 
-<!-- ADMIN PANEL -->
+<!-- ADMIN PANEL — completely invisible, keyboard only -->
 <div id="adm-panel">
   <div class="adm-hd">
     <div class="adm-title">Admin Panel</div>
@@ -641,6 +637,7 @@
 </div>
 
 <script>
+  // REVEAL
   const obs = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
   }), { threshold: 0.07, rootMargin: '0px 0px -20px 0px' });
@@ -661,6 +658,7 @@
     setTimeout(() => document.getElementById('form-ok').style.display = 'none', 4000);
   }
 
+  // ADMIN
   const K = 'abeer_portfolio_v3';
   const gd = () => JSON.parse(localStorage.getItem(K) || '{}');
   const sd = d => localStorage.setItem(K, JSON.stringify(d));
@@ -736,6 +734,7 @@
     document.body.appendChild(el); setTimeout(() => el.remove(), 2500);
   }
 
+  // SECRET keyboard shortcut — invisible to visitors
   document.addEventListener('keydown', e => { if (e.ctrlKey && e.shiftKey && e.key === 'A') togAdm(); });
 
   load();
